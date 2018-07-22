@@ -1,0 +1,17 @@
+<a class="btn=new" href="#!/nota">Nova Nota</a>
+
+<h1>Bem vindo ao app de Notas</h1>
+
+<div class="line"></div>
+
+<div class="box" ng-class="{red: nota.inativo}" ng-repeat="nota in notas">
+    <h3>{{nota.titulo}}</h3>
+    <p>{{nota.descricao}}</p>
+    <p>
+        <a href="#!/nota/{{nota.id}}">Editar</a>        
+        <a ng-click="deletar(nota.id)">Excluir</a>
+        <a ng-click="inativar(nota.id)">
+            {{nota.inativo ? 'Ativar' : 'Inativar'}}
+        </a>
+    </p>
+</div>
